@@ -1,0 +1,35 @@
+handleChange = (e) => {
+    this.setState({
+        searchInput: e.target.value,
+    })      
+}
+
+//  Form
+<div className="wrapper">
+
+    <form className="search-form" action="submit" onSubmit={this.handleFormSubmit}>
+
+        <label
+        className="sr-only"
+        htmlFor="search">
+        </label>
+
+        <input 
+        type="search" 
+        placeholder="Search by title or author"
+        id= "search"
+        name="search"
+        aria-label="Search through site content"
+        title="Search by title or author"
+        
+        onChange={this.handleChange}
+        value={this.state.searchInput}>
+        </input>
+
+        <button type="submit">Search</button>
+        
+    </form>
+
+</div>
+
+- put search axios call in a function instead of componentDidMount
