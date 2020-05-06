@@ -7,8 +7,8 @@ import './App.css';
 // import axios from 'axios';
 import Header from './Components/Header'
 import Catalogue from './Components/Catalogue';
-import MusicDetails from './Components/MusicDetails';
-// import Search from './Components/Search';
+// import MusicDetails from './Components/MusicDetails';
+import Search from './Components/Search';
 
 class App extends Component {
   // constructor (){
@@ -28,9 +28,9 @@ class App extends Component {
 
         <Catalogue />
 
-        {/* <Search /> */}
+        <Search />
 
-        <MusicDetails />
+        {/* <MusicDetails /> */}
         
   
       </div>

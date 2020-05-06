@@ -23,6 +23,13 @@ img {
   display: block;
 }
 
+.wrapper {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  
+}
+
 h1,
 h2,
 h3,
@@ -35,6 +42,7 @@ form,
 fieldset {
   margin: 0;
   padding: 0;
+  border: none;
 }
 
 ul,
@@ -47,7 +55,6 @@ a {
 
 /* Typography */
 h1 {
-  font-family: 'Oswald', sans-serif;
   text-align: left;
   font-weight: bold;
   padding: 1em;
@@ -56,24 +63,21 @@ h1 {
 h2 {
   font-size: 3.5rem;
   font-weight: bold;
+  margin: 0.7em;
 }
 
 h2,
-.artist-list p {
+.artist-list p,
+.album-container p {
   text-transform: uppercase;
 }
 
-.top-artists {
+
+.top-artists,
+.search-albums {
   background: #222220;
   padding: 2.5rem;
   margin: 4rem;   
-}
-
-.top-albums {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .artist-list {
@@ -100,4 +104,50 @@ h2,
 
 .artist-container p {
   letter-spacing: 1px;
+  
+}
+
+.top-albums {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.album-container p {
+  margin: 1em 0;
+}
+
+
+/* Search */
+
+input[type="search"],
+.search button {
+  padding: 0.5em 1.5em;
+}
+
+input[type="search"] {
+  width: 50%;
+  margin-right: 0.5em;
+}
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+
+@media (max-width: 768px){
+  .artist-list {
+    flex-basis: 100%;
+  }
+
+  .artist-list p {
+    font-size: 2.5rem;
+  }
 }

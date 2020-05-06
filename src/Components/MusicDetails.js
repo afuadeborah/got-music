@@ -23,36 +23,49 @@ class MusicDetails extends Component {
                 api_key: apiKey,
                 method: 'artist.getTopAlbums',
                 artist: 'rihanna',
-                limit: '20',
+                limit: '10',
                 format: 'json'
             }
         }).then((response) => {
-            const albums = response.data.topalbums.album;
-      
+            const albums = response.data.topalbums.album
+
+            const albumName = albums[0].name
+            console.log(albumName)
+            
+
+            const newAlbumArr = [...albums]
+            console.log(newAlbumArr)
+
+            // Set state to searched albums
             this.setState({
                 topAlbums: albums,
             })
 
-            console.log(albums);
+            console.log(albums)
         })
     }
+
+   
+
+
 
     render (){
         return (
 
-            <section className="top-albums">
-                {this.state.topAlbums.map((album, index)=> {
+            <div className="wrapper">
+                <section className="top-albums">
+                    {this.state.topAlbums.map((album, index)=> {
 
-                    return (
-                        <div className="album-container" key={index}> 
-                            <img src={album.image[3]["#text"]}/>
-                            <p>{album.name}</p>
-                        </div>
-                    )
-                })}
-                 
+                        return (
+                            <div className="album-container" key={index}> 
+                                <img src={album.image[3]["#text"]}/>
+                                <p>{album.name}</p>
+                            </div>
+                        )
+                    })}
 
-            </section>
+                </section>
+            </div>  
         );
     }
 }

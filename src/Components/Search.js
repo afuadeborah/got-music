@@ -1,41 +1,64 @@
 import React, { Component } from 'react';
+// import axios from 'axios';
 
-class Search extends Component(){
+class Search extends Component {
+
     constructor (){
+
         super();
+
         this.state = {
             artistSearch: "",
         }
     }
 
+
+    // Track value typed in search bar
+    handleChange = (e) => {
+        this.setState({
+            artistSearch: e.target.value
+        })
+
+        console.log(this.state.artistSearch)
+
+    }
+
+
+
+
+
+
     render (){
         return(
-
-            <div className="wrapper">
-
-                <form className="search-albums" action="submit">
             
+            <section className="search">
+                <div className="wrapper">
 
-                    <label
-                    className="sr-only"
-                    htmlFor="search">
-                    </label>
+                    <h2>Got an artist you want to hear?</h2>
 
-                    <input 
-                    type="search" 
-                    placeholder="Enter artist name"
-                    id= "search"
-                    name="search"
-                    aria-label="Search through site content"
-                    title="Search by artist name">
-                    
-                    </input>
+                    <form className="search-albums" action="submit">
+            
+                        <label
+                        className="sr-only"
+                        htmlFor="search">
+                        </label>
 
-                    <button type="submit">Search</button>
+                        <input 
+                        type="search" 
+                        placeholder="Enter artist name"
+                        id= "search"
+                        name="search"
+                        aria-label="Search through site content"
+                        title="Search by artist name"
+                        onChange={this.handleChange}
+                        value={this.state.artistSearch}>
+                        </input>
+
+                        <button type="submit">Get Music</button>
                 
-                </form>
-
-            </div>
+                    </form>
+                </div>
+            </section>
 
         );
 
@@ -46,7 +69,3 @@ class Search extends Component(){
 
 export default Search;
 
-// create ternary for case where there's no record of artist
-{/* // onChange={this.handleChange}
-// value={this.state.searchInput}> */}
-{/* onSubmit={this.handleFormSubmit */}

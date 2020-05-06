@@ -23,7 +23,7 @@ class Catalogue extends Component {
             params: {
                 api_key: apiKey,
                 method: 'chart.getTopArtists',
-                limit: '20',
+                limit: '10',
                 format: 'json'
             } 
         }).then ((response) => {
