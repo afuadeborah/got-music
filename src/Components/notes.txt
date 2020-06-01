@@ -1,35 +1,13 @@
-handleChange = (e) => {
-    this.setState({
-        searchInput: e.target.value,
-    })      
-}
+- write function to filter duplicate albums
+- write function to fill in heart on select
+- write ternary for albums with no info
 
-//  Form
-<div className="wrapper">
-
-    <form className="search-form" action="submit" onSubmit={this.handleFormSubmit}>
-
-        <label
-        className="sr-only"
-        htmlFor="search">
-        </label>
-
-        <input 
-        type="search" 
-        placeholder="Search by title or author"
-        id= "search"
-        name="search"
-        aria-label="Search through site content"
-        title="Search by title or author"
-        
-        onChange={this.handleChange}
-        value={this.state.searchInput}>
-        </input>
-
-        <button type="submit">Search</button>
-        
-    </form>
-
-</div>
-
-- put search axios call in a function instead of componentDidMount
+- <a href="http://www.afuadeborahcodes.com/"
+            className="footer-link"
+            target="_blank" 
+            rel="noopener noreferrer" 
+            tabIndex="0"
+            aria-hidden="true"
+            title="afuadeborahcodes.com" 
+            alt="Go to Afua's page."
+            >Afua Frimpong </a>

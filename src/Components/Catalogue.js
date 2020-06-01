@@ -52,19 +52,19 @@ class Catalogue extends Component {
                                 <div className="rank-container">
                                     <p className="rank">{index + 1}</p>
                                 </div>
-                                    <a href=""
-                                    className="artist-container"
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    title={`See ${artist.name}'s albums`}
-                                    tabIndex="0">
-                                        <p className="artist"> {artist.name}</p>
-                                    </a>
-                                </div>
+
+                                <a href={`${artist.url}`}
+                                className="artist-container"
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                title={`See ${artist.name}'s albums`}
+                                tabIndex="0">
+                                    <p className="artist"> {artist.name}</p>
+                                </a>
+                            </div>
                         )
                     })}
                 </div>
-
 
             </section>
         );

@@ -1,4 +1,5 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCZbC3Diw66i3hj_Vp9RI5ncgBk4CIhTSA",
@@ -8,10 +9,9 @@ const firebaseConfig = {
     storageBucket: "got-music.appspot.com",
     messagingSenderId: "693014542927",
     appId: "1:693014542927:web:1769fd7976add77afa883a"
-  };
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
 
-
-export default 'firebase';
+export default firebase;

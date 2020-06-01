@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import firebase from "../firebase";
 import { AiOutlineHeart } from 'react-icons/ai';
 
 
@@ -19,6 +20,18 @@ class Search extends Component {
         }
     }
 
+    componentDidMount (){
+        // Access database 
+        const dbRef = firebase.database().ref();
+
+        // Listen for any changes in the database and use a callback to get the info
+        dbRef.on('value', (response) =>{
+
+            console.log(response.val())
+        })
+    }
+
+
 
     // Track value typed in search bar
     handleChange = (e) => {
@@ -26,9 +39,8 @@ class Search extends Component {
             artistSearch: e.target.value
         })
 
-        console.log(this.state.artistSearch)
-
     }
+
 
     // Search for top albums by artist on submit
     handleSubmit = (e) => {
@@ -61,8 +73,6 @@ class Search extends Component {
         }).then((response) => {
             const albums = response.data.topalbums.album
 
-            const albumName = albums[0].name
-
             // Set state to searched albums
             this.setState({
                 topAlbums: albums,
@@ -76,8 +86,11 @@ class Search extends Component {
 
     // Select album to add to playlist
     addToList = () => {
-        // her3
+        // here
     }
+
+    // Firebase reference setup
+   
 
     
     render (){
@@ -123,9 +136,12 @@ class Search extends Component {
                         return (
                             <div className="album-container" key={index}> 
                                 <img src={album.image[3]["#text"]} alt={album.name}/>
+
                                 <div className="like-album">
-                                    <p>{album.name}</p>
+
+                                    <p title="Click heart to add to collection">{album.name}</p>
                                     <AiOutlineHeart />
+
                                 </div>
                             </div>
                         )
