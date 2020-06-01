@@ -43,7 +43,7 @@ class Catalogue extends Component {
         
         return (
             <section className="top-artists">
-                <h2>Top 10 artists today</h2>
+                <h2>Today's Top 10</h2>
                 <div className="artist-list-container">
                     {this.state.artists.map((artist, index) => {
                         return (
@@ -79,5 +79,3 @@ class Catalogue extends Component {
 
 export default Catalogue;
 
-// try and use a different endpoint with pictures that work
-// make this a search page too!

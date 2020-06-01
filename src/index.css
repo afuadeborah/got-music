@@ -56,8 +56,8 @@ a {
 /* Typography */
 h1 {
   text-align: left;
-  font-weight: bold;
   padding: 1em;
+  color: #02DFEB;
 }
 
 h2 {
@@ -67,28 +67,52 @@ h2 {
 }
 
 h2,
+h3,
 .artist-list p,
-.album-container p {
+.album-container p,
+button {
   text-transform: uppercase;
 }
 
 
-.top-artists,
-.search-albums {
+/* Header */
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Top Daily Artists */
+.artist-list-container,
+.search-container {
   background: #222220;
-  padding: 2.5rem;
   margin: 4rem;   
 }
+
+.artist-list-container,
+.search-container,
+.artist-list {
+  padding: 2rem;
+  
+}
+
+
 
 .artist-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #171717;
-  padding: 2.5rem;
   flex-basis: calc(50% - 20px);
   margin: 1rem;
 }
+
+.artist-list,
+input[type="search"],
+button {
+  border-radius: 1.7px;
+}
+
 
 .artist-list-container {
   display: flex;
@@ -102,7 +126,8 @@ h2,
  
 }
 
-.artist-container p {
+.artist-container p,
+input[type="search"] {
   letter-spacing: 1px;
   
 }
@@ -112,6 +137,17 @@ h2,
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  margin: 10% auto;
+}
+
+.album-container {
+  flex-basis: calc(33% - 20px);
+  width: 30%;
+  margin: 1.5em 1em;
+}
+
+.album-container img {
+  border-radius: 50%;
 }
 
 .album-container p {
@@ -120,6 +156,16 @@ h2,
 
 
 /* Search */
+.build-album {
+  height: 100vh;
+  margin-top: 20%;
+}
+
+.search-albums {
+  background: #171717;
+  padding: 2.5rem;
+  margin: 1em;
+}
 
 input[type="search"],
 .search button {
@@ -127,10 +173,31 @@ input[type="search"],
 }
 
 input[type="search"] {
-  width: 50%;
-  margin-right: 0.5em;
+  width: 60%;
+  margin-right: 0.9em;
 }
 
+.search button {
+  background-color: #00B0BF;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding: 0.8em 1.5em;
+}
+
+.like-album {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.like-album svg {
+  color: #00B0BF;
+}
+
+.like-album svg:hover {
+  transform: scale(1.1);
+}
 
 
 
