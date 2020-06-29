@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import firebase from "../firebase";
-import { AiOutlineHeart } from 'react-icons/ai';
+
+
+import Album from './Album';
+import Playlist from './Playlist';
 
 
 class Search extends Component {
@@ -21,17 +24,39 @@ class Search extends Component {
     }
 
     componentDidMount (){
+        // Firebase Setup
         // Access database 
         const dbRef = firebase.database().ref();
 
         // Listen for any changes in the database and use a callback to get the info
-        dbRef.on('value', (response) =>{
+        dbRef.on('value', (response) => {
+            // Variable to store new state
+            const albumState = []
 
-            console.log(response.val())
+            // Store response from search to Firebase
+            // .val gets us the "values" from the database
+            const data = response.val() 
+
+            // Data is an object, so we need a loop to grab each album pushed into the array
+            for (let album in data) {
+
+                const albumData = {
+                    album: album,
+                    name: data[album],
+                }
+
+                // Push these values into an array we can access in state
+                albumState.push(albumData)
+            } 
+
+            // Make this live and able to track by setting this to state
+            this.setState ({
+                userList: albumState
+            })
+
+            
         })
     }
-
-
 
     // Track value typed in search bar
     handleChange = (e) => {
@@ -73,23 +98,60 @@ class Search extends Component {
         }).then((response) => {
             const albums = response.data.topalbums.album
 
-            // Set state to searched albums
-            this.setState({
-                topAlbums: albums,
+            // Make a copy of the array data we need
+            const newState = []
+
+            albums.map(function(album) {
+                
+                newState.push({
+                    title: album.name,
+                    image: album.image[3]["#text"],
+                    smallImage: album.image[2]["#text"],
+                    url: album.url,
+                })
             })
 
-            console.log(albums)
+            // Set state to searched albums            
+            this.setState({
+                topAlbums: newState,
+            })
+
+
+            console.log(albums, newState)
+        }).catch((error) => {
+
+            console.log('No data found.')
+        
         })
 
 
     }
 
     // Select album to add to playlist
-    addToList = () => {
-        // here
+    addToPlaylist = (album) => {
+        // Get firebase
+        const dbRef = firebase.database().ref()
+
+        dbRef.push(album)
+
+        console.log(this.state.userList);
+        console.log(this.state.userList[0])
+        
+
     }
 
-    // Firebase reference setup
+
+    // Remove album from playlist on click
+    removeFromPlaylist = (album) => {
+        // Pull off album ftom the child of the root, not the whole root
+        const dbRef = firebase.database().ref()
+
+        dbRef.child(album).remove()
+        console.log(this.state.userList);
+    
+        
+    }
+
    
 
     
@@ -131,26 +193,45 @@ class Search extends Component {
                 <h3>Build your album collection</h3>
 
                 <section className="top-albums">
+            
+                    {/* this.state.topAlbums is an object holding the necessary info for the functional component */}
                     {this.state.topAlbums.map((album, index)=> {
-
                         return (
-                            <div className="album-container" key={index}> 
-                                <img src={album.image[3]["#text"]} alt={album.name}/>
 
-                                <div className="like-album">
-
-                                    <p title="Click heart to add to collection">{album.name}</p>
-                                    <AiOutlineHeart />
-
-                                </div>
-                            </div>
+                            // If the album title is (null) or "?", don't show anything for that album result, if there's a valid title show the information for that album
+                            album.name === "(null)" || album.title === "?" ? ''
+                            :
+                            // Pass album info and playlists down as an object held in topAlbums from the axios call and if the album exists
+                            // We want to be able to click the heart in the Album component and push it to the database held here
+                            <Album key={index} album={album} playlist={this.addToPlaylist}/>
+                            
                         )
                     })}
 
                 </section>
+                
+
+                <h3>Your Playlists</h3>
+                <section className="user-playlist">
+
+                    <div className="playlist-container">
+                        {this.state.userList.map((alb, index) => {
+                            
+                            return(
+                                <div>
+                                    {/* Print each album */}
+                                    <Playlist key={index} userList={alb} remove={this.removeFromPlaylist}/>
+                                </div>
+                            )
+                            
+                        })}
+
+                    </div>
+
+                </section>
+                
             </div>
  
-
         );
 
 
@@ -160,3 +241,5 @@ class Search extends Component {
 
 export default Search;
 
+// map over firebase album info props in here too
+    // we map over the array in search to print it to the page, but map over it here to grab the name object and grab the info off that

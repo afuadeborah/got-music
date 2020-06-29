@@ -10,13 +10,7 @@ import Catalogue from './Components/Catalogue';
 import Search from './Components/Search';
 
 class App extends Component {
-  // constructor (){
-  //   super();
-
-   
-   
-  // }
-
+ 
 
 
   render (){
