@@ -63,11 +63,22 @@ h1 {
 h2 {
   font-size: 3.5rem;
   font-weight: bold;
+}
+
+h2,
+h3 {
   margin: 0.7em;
 }
 
 h3 {
   letter-spacing: 0.05em;
+}
+
+h5 {
+  font-weight: bold;
+  letter-spacing: 1.75px;
+  font-size: 1.8rem;
+
 }
 
 h2,
@@ -109,7 +120,8 @@ nav {
 }
 
 .search-container,
-.top-albums {
+.top-albums,
+.playlist-container {
   border-radius: 2.5px;
 }
 
@@ -245,18 +257,45 @@ input[type="search"] {
 .playlist-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   margin: 1.5em;
-  border-top: 1px solid #0BF400;
-  border-left: 1px solid #0BF400;
+  border-bottom: 1px solid #0BF400;
+  border-right: 1px solid #0BF400;
 }
 
 .user-album {
   background-color: #171717;
   padding: 2rem;
-  margin: 2em;
-  
+  margin: 0.8em 1em;
+  display: flex;
+  justify-content: space-between;
 }
 
+.selected-album {
+  display: flex;
+}
+
+.delete {
+  color: #00B0BF;
+}
+
+.list-info {
+  flex-basis: 50%;
+  margin-left: 4em;
+  text-align: left;
+}
+
+.list-info a {
+  font-size: 1.6rem; 
+}
+
+.artist-name {
+  margin: 1.25em 0;
+  letter-spacing: 0.06em;
+  font-size: 1.7rem;
+  font-weight: lighter;
+  color: #989898;
+}
 
 
 

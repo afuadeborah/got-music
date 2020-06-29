@@ -54,7 +54,7 @@ class Search extends Component {
                 userList: albumState
             })
 
-            
+            console.log(this.state.userList)
         })
     }
 
@@ -105,6 +105,7 @@ class Search extends Component {
                 
                 newState.push({
                     title: album.name,
+                    artist: album.artist.name,
                     image: album.image[3]["#text"],
                     smallImage: album.image[2]["#text"],
                     url: album.url,
@@ -133,9 +134,6 @@ class Search extends Component {
         const dbRef = firebase.database().ref()
 
         dbRef.push(album)
-
-        console.log(this.state.userList);
-        console.log(this.state.userList[0])
         
 
     }
@@ -147,7 +145,6 @@ class Search extends Component {
         const dbRef = firebase.database().ref()
 
         dbRef.child(album).remove()
-        console.log(this.state.userList);
     
         
     }
@@ -199,7 +196,7 @@ class Search extends Component {
                         return (
 
                             // If the album title is (null) or "?", don't show anything for that album result, if there's a valid title show the information for that album
-                            album.name === "(null)" || album.title === "?" ? ''
+                            album.title === "(null)" || album.title === "?" ? ''
                             :
                             // Pass album info and playlists down as an object held in topAlbums from the axios call and if the album exists
                             // We want to be able to click the heart in the Album component and push it to the database held here
@@ -218,10 +215,9 @@ class Search extends Component {
                         {this.state.userList.map((alb, index) => {
                             
                             return(
-                                <div>
-                                    {/* Print each album */}
-                                    <Playlist key={index} userList={alb} remove={this.removeFromPlaylist}/>
-                                </div>
+
+                                <Playlist key={index} userList={alb} remove={this.removeFromPlaylist}/>
+ 
                             )
                             
                         })}
