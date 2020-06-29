@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/afuadeborah/got-music/static/css/main.b5dab23c.chunk.css",
-    "main.js": "/afuadeborah/got-music/static/js/main.fd9282e2.chunk.js",
-    "main.js.map": "/afuadeborah/got-music/static/js/main.fd9282e2.chunk.js.map",
+    "main.js": "/afuadeborah/got-music/static/js/main.fcbbf313.chunk.js",
+    "main.js.map": "/afuadeborah/got-music/static/js/main.fcbbf313.chunk.js.map",
     "runtime-main.js": "/afuadeborah/got-music/static/js/runtime-main.22d637da.js",
     "runtime-main.js.map": "/afuadeborah/got-music/static/js/runtime-main.22d637da.js.map",
     "static/js/2.a6b64894.chunk.js": "/afuadeborah/got-music/static/js/2.a6b64894.chunk.js",
     "static/js/2.a6b64894.chunk.js.map": "/afuadeborah/got-music/static/js/2.a6b64894.chunk.js.map",
     "index.html": "/afuadeborah/got-music/index.html",
-    "precache-manifest.85f104a74cd6e26a983c78e72a41fddc.js": "/afuadeborah/got-music/precache-manifest.85f104a74cd6e26a983c78e72a41fddc.js",
+    "precache-manifest.7f57fd22649d31fcf1243312fea3d6d4.js": "/afuadeborah/got-music/precache-manifest.7f57fd22649d31fcf1243312fea3d6d4.js",
     "service-worker.js": "/afuadeborah/got-music/service-worker.js",
     "static/css/main.b5dab23c.chunk.css.map": "/afuadeborah/got-music/static/css/main.b5dab23c.chunk.css.map",
     "static/js/2.a6b64894.chunk.js.LICENSE.txt": "/afuadeborah/got-music/static/js/2.a6b64894.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.22d637da.js",
     "static/js/2.a6b64894.chunk.js",
     "static/css/main.b5dab23c.chunk.css",
-    "static/js/main.fd9282e2.chunk.js"
+    "static/js/main.fcbbf313.chunk.js"
   ]
 }
