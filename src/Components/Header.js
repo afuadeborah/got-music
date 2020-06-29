@@ -5,6 +5,7 @@ const Header = () => {
     return (
         <header>
             <nav>
+                
                 <h1>got music?</h1>
 
                 <ul className="top-nav">

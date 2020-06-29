@@ -103,7 +103,7 @@ class Search extends Component {
 
             albums.map(function(album) {
                 
-                newState.push({
+                return newState.push({
                     title: album.name,
                     artist: album.artist.name,
                     image: album.image[3]["#text"],
@@ -208,8 +208,8 @@ class Search extends Component {
                 </section>
                 
 
-                <h3>Your Playlists</h3>
-                <section id="playlist" className="user-playlist">
+                <h3 id="playlist">Your Playlists</h3>
+                <section  className="user-playlist">
 
                     <div className="playlist-container">
                         {this.state.userList.map((alb, index) => {
