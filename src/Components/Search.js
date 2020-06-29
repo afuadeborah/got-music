@@ -209,7 +209,7 @@ class Search extends Component {
                 
 
                 <h3>Your Playlists</h3>
-                <section className="user-playlist">
+                <section id="playlist" className="user-playlist">
 
                     <div className="playlist-container">
                         {this.state.userList.map((alb, index) => {
@@ -230,12 +230,9 @@ class Search extends Component {
  
         );
 
-
     }
 }
 
 
 export default Search;
 
-// map over firebase album info props in here too
-    // we map over the array in search to print it to the page, but map over it here to grab the name object and grab the info off that

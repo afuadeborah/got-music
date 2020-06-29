@@ -99,7 +99,22 @@ svg {
 /* Header */
 nav {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-nav {
+  display: flex;
+  padding: 0.5em 1em;
+}
+
+.top-nav li {
+  margin: 1em;
+}
+
+.top-nav a {
+  text-transform: uppercase;
+  letter-spacing: 1.75px;
 }
 
 
@@ -271,6 +286,12 @@ input[type="search"] {
   justify-content: space-between;
 }
 
+.img-container {
+  align-self: center;
+}
+
+
+
 .selected-album {
   display: flex;
 }
@@ -280,19 +301,19 @@ input[type="search"] {
 }
 
 .list-info {
-  flex-basis: 50%;
+  flex-basis: 70%;
   margin-left: 4em;
   text-align: left;
 }
 
 .list-info a {
-  font-size: 1.6rem; 
+  font-size: 1.5rem; 
 }
 
 .artist-name {
   margin: 1.25em 0;
   letter-spacing: 0.06em;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: lighter;
   color: #989898;
 }
@@ -367,6 +388,11 @@ input[type="search"] {
 
   .album-container {
     margin: 1.5em 0.5em;
+  }
+
+  .list-info {
+    margin-left: 2.5rem;
+
   }
 }
 
