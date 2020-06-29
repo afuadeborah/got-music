@@ -1,3 +1,79 @@
+# Got Music?
+
+Turn it on and turn up!  🎧🎶
+
+My take on Spotify where users can create playlists of top albums searched by artist with albums and artists pulled from Lastfm API.
+
+On page load, the user is shown the daily top 10 artists as per Lastfm.com.
+
+Scroll down a little further and search an artist, and “like” the albums you want added to your playlist.
+
+
+## Motivation
+
+It is a work in progress, however this project displays:
+
+- The ability to write JSX in both functional and class components
+
+- Multiple axios calls in different components
+
+- Manipulating dynamically added elements to the page
+
+- Event + Error handling
+
+- Creating, updating, and setting information to an external database
+
+
+
+## Tech/Framework used
+
+- HTML5
+- CSS3
+- React
+- Firebase
+- ECMAS 6
+- Lastfm API
+- JSX
+
+
+## Features
+
+- Designed using principles learned in Scrimba’s UI/UX Fundamentals course
+
+- Modern, minimalist, and responsive design
+
+- Scoping and namespacing of code
+
+- Accessing multi-level databases stored in Firebase
+
+- ECMAS Arrow functions + Function Declarations
+
+
+
+
+
+
+
+
+----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
