@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/afuadeborah/got-music/static/css/main.b5dab23c.chunk.css",
-    "main.js": "/afuadeborah/got-music/static/js/main.fcbbf313.chunk.js",
-    "main.js.map": "/afuadeborah/got-music/static/js/main.fcbbf313.chunk.js.map",
-    "runtime-main.js": "/afuadeborah/got-music/static/js/runtime-main.22d637da.js",
-    "runtime-main.js.map": "/afuadeborah/got-music/static/js/runtime-main.22d637da.js.map",
-    "static/js/2.a6b64894.chunk.js": "/afuadeborah/got-music/static/js/2.a6b64894.chunk.js",
-    "static/js/2.a6b64894.chunk.js.map": "/afuadeborah/got-music/static/js/2.a6b64894.chunk.js.map",
-    "index.html": "/afuadeborah/got-music/index.html",
-    "precache-manifest.7f57fd22649d31fcf1243312fea3d6d4.js": "/afuadeborah/got-music/precache-manifest.7f57fd22649d31fcf1243312fea3d6d4.js",
-    "service-worker.js": "/afuadeborah/got-music/service-worker.js",
-    "static/css/main.b5dab23c.chunk.css.map": "/afuadeborah/got-music/static/css/main.b5dab23c.chunk.css.map",
-    "static/js/2.a6b64894.chunk.js.LICENSE.txt": "/afuadeborah/got-music/static/js/2.a6b64894.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.b5dab23c.chunk.css",
+    "main.js": "./static/js/main.f4d3c539.chunk.js",
+    "main.js.map": "./static/js/main.f4d3c539.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.720e790e.js",
+    "runtime-main.js.map": "./static/js/runtime-main.720e790e.js.map",
+    "static/js/2.8a594a2f.chunk.js": "./static/js/2.8a594a2f.chunk.js",
+    "static/js/2.8a594a2f.chunk.js.map": "./static/js/2.8a594a2f.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.b9e2679433f6d38986a1a521847b2227.js": "./precache-manifest.b9e2679433f6d38986a1a521847b2227.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.b5dab23c.chunk.css.map": "./static/css/main.b5dab23c.chunk.css.map",
+    "static/js/2.8a594a2f.chunk.js.LICENSE.txt": "./static/js/2.8a594a2f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.22d637da.js",
-    "static/js/2.a6b64894.chunk.js",
+    "static/js/runtime-main.720e790e.js",
+    "static/js/2.8a594a2f.chunk.js",
     "static/css/main.b5dab23c.chunk.css",
-    "static/js/main.fcbbf313.chunk.js"
+    "static/js/main.f4d3c539.chunk.js"
   ]
 }
