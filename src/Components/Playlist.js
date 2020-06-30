@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiXCircle } from 'react-icons/fi';
+import { FaTimes, FaPlay } from 'react-icons/fa';
 
 
 const Playlist = ({userList, remove}) => {
@@ -17,17 +17,18 @@ const Playlist = ({userList, remove}) => {
                 <div className="list-info">
                     <h5>{userList.name.title}</h5>
                     <p className="artist-name">{userList.name.artist}</p>
-                    <a target="_blank" 
+                    <a className="listen"
+                    target="_blank" 
                     rel="noopener noreferrer" 
                     tabIndex="0" 
                     href={userList.name.url}>
-                    Go listen to {userList.name.title} on LastFm</a>
+                    <FaPlay /> Listen to {userList.name.title} on LastFm</a>
                 </div>
 
             </div>
 
             <div className="remove-album">
-                <FiXCircle className="delete" title={'Remove album from playlist'} onClick={() => remove(userList.album)}/>
+                <FaTimes className="delete" title={'Remove album from playlist'} onClick={() => remove(userList.album)}/>
             </div>
 
         </div>

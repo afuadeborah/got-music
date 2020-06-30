@@ -187,6 +187,8 @@ class Search extends Component {
                     </div>
                 </section>
 
+                <div className="spacer"></div>
+
                 <h3>Build your album collection</h3>
 
                 <section className="top-albums">
@@ -207,8 +209,9 @@ class Search extends Component {
 
                 </section>
                 
+                <div className="spacer"></div>
 
-                <h3 id="playlist">Your Playlists</h3>
+                <h3 id="playlist">Your Playlist</h3>
                 <section  className="user-playlist">
 
                     <div className="playlist-container">
