@@ -3,7 +3,8 @@ import axios from 'axios';
 
 class Catalogue extends Component {
     constructor (){
-        super ()
+
+        super ();
 
         this.state = {
 
@@ -70,10 +71,6 @@ class Catalogue extends Component {
         );
     }
 }
-
-
-
-
 
 
 
