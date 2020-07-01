@@ -18,7 +18,7 @@ class Catalogue extends Component {
     
         // First API call to grab top artists
         axios ({
-            url: 'https://ws.audioscrobbler.com/2.0/',
+            url: 'http://ws.audioscrobbler.com/2.0/',
             method: 'GET',
             responseType: 'json',
             params: {
