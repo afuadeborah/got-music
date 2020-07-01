@@ -9,10 +9,10 @@ import Header from './Components/Header'
 import Catalogue from './Components/Catalogue';
 import Search from './Components/Search';
 
+
+
 class App extends Component {
  
-
-
   render (){
 
     return (

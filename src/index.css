@@ -2,6 +2,17 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 
+.visually-hidden { 
+  position: absolute !important;
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 /* Default Styling */
@@ -11,10 +22,17 @@ html {
 
 body {
   background-color: black;
-  color: white;
   font-family: 'Manrope', sans-serif;
   line-height: 1.6;
   font-size: 2rem;
+  overflow-x: hidden;
+}
+
+body,
+ul,
+li,
+a {
+  color: white;
 }
 
 img {
@@ -51,22 +69,31 @@ li,
 a {
   list-style: none;
   text-decoration: none;
-  color: white;
 }
 
 /* Typography */
 h1 {
   padding: 0.5em 1em;
+}
+
+h1,
+.like-album svg:hover {
   color: #02DFEB;
 }
 
 h2 {
   font-size: 3.5rem;
-  font-weight: bold;
 }
 
 h2,
-h3 {
+.hamburger a {
+  font-size: 3.5rem;
+}
+
+
+h2,
+h3,
+.search-albums {
   margin: 1em;
 }
 
@@ -76,23 +103,37 @@ h3 {
 }
 
 h5 {
-  font-weight: bold;
   letter-spacing: 1.75px;
-  font-size: 1.6rem;
 
+}
+
+h5,
+.search button {
+  font-size: 1.6rem;
+}
+
+h2,
+h5,
+.hamburger a,
+.search button,
+.like-album svg:hover {
+  font-weight: bold;
 }
 
 h2,
 h3,
 h4,
 h5,
+.hamburger a,
+.top-nav a,
 .artist-list p,
 .album-container p,
 button {
   text-transform: uppercase;
 }
 
-svg {
+svg,
+.ham-input {
   cursor: pointer;
 }
 
@@ -100,38 +141,211 @@ svg {
   height: 15vh;
 }
 
-/* Header */
-nav {
+nav,
+.top-nav,
+.artist-list,
+.artist-list-container,
+.top-albums,
+.album-container,
+.like-album,
+.playlist-container,
+.user-album,
+.selected-album,
+.listen,
+.search-albums {
   display: flex;
+
+}
+
+nav,
+.artist-list,
+.artist-list-container,
+.album-container,
+.user-album {
   justify-content: space-between;
+}
+
+nav,
+.artist-list,
+.top-albums,
+.like-album,
+.selected-album,
+.listen {
   align-items: center;
 }
 
+.top-nav,
+.album-container,
+.like-album,
+.playlist-container {
+  flex-direction: column;
+}
+
+.build-album,
 .top-nav {
-  display: flex;
+  height: 100vh;
+}
+
+
+/* Header */
+.top-nav {
   padding: 0.5em 1em;
 }
 
-.top-nav li {
-  margin: 1em;
+
+/* Hamburger Menu
+Special credits to Erik Terwan's Codepen for the Hamburger Menu https://codepen.io/erikterwan/pen/EVzeRP?editors=1100 */
+
+.hamburger {
+  text-align: right;
+  padding-right: 40px;
+
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+  
+  /* Menu Links Styling */
+.hamburger a  {
+  letter-spacing: 3px;   
+}
+
+.hamburger a:hover {
+  transition: border 0.3s ease;
+  border-bottom: 4px solid #02DFEB;
+
+}
+
+.hamburger li {
+  padding: 1.2em 0;  
+}
+
+
+/* Input Checkbox */
+.ham-input,
+.top-nav {
+  position: absolute;
+}
+
+.ham-input {
+  display: block;
+  width: 50px;
+  height: 50px;
+  top: 35px;
+  right: 45px;
+
+  z-index: 2;
+  
+  -webkit-touch-callout: none;
+}
+
+.ham-input,
+.ham-input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+
+}
+
+.ham-input:checked ~ span,
+.ham-input:checked ~ span:nth-last-child(2),
+.ham-input:checked ~ ul {
+  opacity: 1;
+
+}
+
+.ham-input:checked ~ span,
+span {
+  background: white;
+
+} 
+
+.ham-input:checked ~ span {
+  transform: rotate(45deg) translate(0px, 0px);
+}
+
+.ham-input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.ham-input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0px, -3px);
+}
+
+.ham-input:checked ~ ul {
+  transform: scale(1.0, 1.0);
+
+}
+
+/* In order to trigger the menu to open and close based on the :checked attribute */
+
+/* Icon */
+span {
+  display: block;
+  height: 4px;
+  width: 45px;
+  margin-bottom: 10px;
+  position: relative;
+  right: 15%;
+  top: 20%;
+
+  z-index: 1;
+
+  /* Animate Spans on Click */
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  opacity 0.55s ease;
+}
+
+span:first-child {
+  transform-origin: 0% 0%;
+}
+
+span:last-child {
+  transform-origin: 0% 100%;
+}
+    
+
+.top-nav {
+  width: 100vw;
+  margin: -100px 0 0 0;
+  padding: 50px;
+  padding-top: 125px;
+  right: -20px;
+
+  background:linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95));
+  -webkit-font-smoothing: antialiased;
+
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
 .top-nav a {
-  text-transform: uppercase;
   letter-spacing: 1.75px;
 }
 
 
 /* Top Daily Artists */
-.search-container {
-  border-top: 2px solid #00B0BF;
-  border-left: 2px solid #00B0BF;
+.search-container,
+.user-playlist,
+.artist-list {
+  border-top: 2px solid #02DFEB;
+  border-left: 2px solid #02DFEB;
+
+}
+
+.top-albums
+.playlist-container {
+  padding: 1em;
+
 }
 
 .top-albums {
-  padding: 1em;
-  border-bottom: 2px solid #00B0BF;
-  border-right: 2px solid #00B0BF;
+  border-bottom: 2px solid #02DFEB;
+  border-right: 2px solid #02DFEB;
 }
 
 .search-container {
@@ -146,20 +360,19 @@ nav {
 
 .artist-list-container,
 .search-container,
-.artist-list {
+.artist-list,
+.user-album {
   padding: 2rem;
   
 }
 
-.artist-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.search-albums {
   background: #171717;
+}
+
+.artist-list {
   flex-basis: calc(50% - 20px);
   margin: 1rem;
-  border-left: 2px solid #00B0BF;
-
 }
 
 .artist-list,
@@ -168,11 +381,10 @@ button {
   border-radius: 1.7px;
 }
 
-
-.artist-list-container {
-  display: flex;
+.artist-list-container,
+.top-albums,
+.playlist-container {
   flex-wrap: wrap;
-  justify-content: space-between;
   
 }
 
@@ -187,11 +399,13 @@ input[type="search"] {
   
 }
 
-.top-albums {
-  display: flex;
-  flex-wrap: wrap;
+.top-albums,
+.like-album {
   justify-content: space-evenly;
-  align-items: center;
+
+}
+
+.top-albums {
   margin: 10% auto;
 }
 
@@ -199,9 +413,6 @@ input[type="search"] {
   flex-basis: calc(33% - 20px);
   width: 30%;
   margin: 1.5em 0.55em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .album-container img {
@@ -215,14 +426,11 @@ input[type="search"] {
 
 /* Search */
 .build-album {
-  height: 100vh;
   margin-top: 20%;
 }
 
 .search-albums {
-  background: #171717;
   padding: 3.5rem 2.5rem;
-  margin: 1em;
 }
 
 input[type="search"],
@@ -236,20 +444,10 @@ input[type="search"] {
 }
 
 .search button {
-  background-color: #00B0BF;
+  background-color: #02DFEB;
   letter-spacing: 0.5px;
-  font-weight: bold;
-  font-size: 1.6rem;
   padding: 0.8em 1.5em;
   box-shadow: 2px 2px 1px 0px #595859;
-}
-
-.like-album {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  
 }
 
 .like-album svg {
@@ -258,45 +456,20 @@ input[type="search"] {
 
 .like-album svg:hover {
   transform: scale(1.2);
-  font-weight: bold;
-  color: #00B0BF;
 }
 
 
-/* #FF6E00 */
-/*  #0BF400 */
-/* #F4CE48 */
 
-/* PLaylists */
-.user-playlist {
-  border-top: 2px solid #00B0BF;
-  border-left: 2px solid #00B0BF;
-}
-
+/* Playlists */
 .playlist-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  border: 1px solid #00B0BF;
+  border: 1px solid #02DFEB;
   padding: 1em;
 }
 
 .user-album {
   background-color: #171717;
-  padding: 2rem;
   margin: 0.5em 1em;
-  display: flex;
-  justify-content: space-between;
 }
-
-
-.selected-album {
-  display: flex;
-  align-items: center;
-}
-
-
-
 
 .list-info {
   margin-left: 4em;
@@ -314,11 +487,6 @@ input[type="search"] {
   font-size: 1.4rem;
   font-weight: lighter;
   color: #989898;
-}
-
-.listen {
-  display: flex;
-  align-items: center;
 }
 
 .listen svg {
@@ -340,7 +508,6 @@ input[type="search"] {
   }
 
   .search-albums {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -401,7 +568,6 @@ input[type="search"] {
 
   }
 }
-
 
 
 @media (max-width: 500px){
