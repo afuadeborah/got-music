@@ -44,7 +44,9 @@ class Catalogue extends Component {
         
         return (
             <section className="top-artists">
+                
                 <h2>Today's Top 10</h2>
+
                 <div className="artist-list-container">
                     {this.state.artists.map((artist, index) => {
                         return (

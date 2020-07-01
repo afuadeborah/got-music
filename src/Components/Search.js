@@ -118,7 +118,6 @@ class Search extends Component {
             })
 
 
-            console.log(albums, newState)
         }).catch((error) => {
 
             console.log('No data found.')
