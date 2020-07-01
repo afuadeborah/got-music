@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0d933453ed9525d00525348331c58602",
+    "revision": "8824d735ae4949300a4878b9b7a10958",
     "url": "/got-music/index.html"
   },
   {
-    "revision": "eabd4e438626d1b78a4c",
+    "revision": "618c0bb60c37479d488a",
     "url": "/got-music/static/css/main.3dead47f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/got-music/static/js/2.0a38ec06.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "eabd4e438626d1b78a4c",
-    "url": "/got-music/static/js/main.fa226feb.chunk.js"
+    "revision": "618c0bb60c37479d488a",
+    "url": "/got-music/static/js/main.3a56dc82.chunk.js"
   },
   {
     "revision": "da566f3bbfd68eacee81",
