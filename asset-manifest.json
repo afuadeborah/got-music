@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/got-music/static/css/main.b5dab23c.chunk.css",
-    "main.js": "/got-music/static/js/main.09e9c73a.chunk.js",
-    "main.js.map": "/got-music/static/js/main.09e9c73a.chunk.js.map",
+    "main.css": "/got-music/static/css/main.ebaca4d6.chunk.css",
+    "main.js": "/got-music/static/js/main.98d727db.chunk.js",
+    "main.js.map": "/got-music/static/js/main.98d727db.chunk.js.map",
     "runtime-main.js": "/got-music/static/js/runtime-main.733cbf83.js",
     "runtime-main.js.map": "/got-music/static/js/runtime-main.733cbf83.js.map",
-    "static/js/2.77c1d987.chunk.js": "/got-music/static/js/2.77c1d987.chunk.js",
-    "static/js/2.77c1d987.chunk.js.map": "/got-music/static/js/2.77c1d987.chunk.js.map",
+    "static/js/2.0a38ec06.chunk.js": "/got-music/static/js/2.0a38ec06.chunk.js",
+    "static/js/2.0a38ec06.chunk.js.map": "/got-music/static/js/2.0a38ec06.chunk.js.map",
     "index.html": "/got-music/index.html",
-    "precache-manifest.3e0f0767eb797084a7eec81cbe54e73d.js": "/got-music/precache-manifest.3e0f0767eb797084a7eec81cbe54e73d.js",
+    "precache-manifest.e29a413e89fc31428225e020e7cc6ebb.js": "/got-music/precache-manifest.e29a413e89fc31428225e020e7cc6ebb.js",
     "service-worker.js": "/got-music/service-worker.js",
-    "static/css/main.b5dab23c.chunk.css.map": "/got-music/static/css/main.b5dab23c.chunk.css.map",
-    "static/js/2.77c1d987.chunk.js.LICENSE.txt": "/got-music/static/js/2.77c1d987.chunk.js.LICENSE.txt"
+    "static/css/main.ebaca4d6.chunk.css.map": "/got-music/static/css/main.ebaca4d6.chunk.css.map",
+    "static/js/2.0a38ec06.chunk.js.LICENSE.txt": "/got-music/static/js/2.0a38ec06.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.733cbf83.js",
-    "static/js/2.77c1d987.chunk.js",
-    "static/css/main.b5dab23c.chunk.css",
-    "static/js/main.09e9c73a.chunk.js"
+    "static/js/2.0a38ec06.chunk.js",
+    "static/css/main.ebaca4d6.chunk.css",
+    "static/js/main.98d727db.chunk.js"
   ]
 }
