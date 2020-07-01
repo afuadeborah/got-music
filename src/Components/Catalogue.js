@@ -18,7 +18,7 @@ class Catalogue extends Component {
     
         // First API call to grab top artists
         axios ({
-            url: 'http://ws.audioscrobbler.com/2.0/',
+            url: 'https://ws.audioscrobbler.com/2.0/',
             method: 'GET',
             responseType: 'json',
             params: {
@@ -44,7 +44,7 @@ class Catalogue extends Component {
         
         return (
             <section className="top-artists">
-                
+
                 <h2>Today's Top 10</h2>
 
                 <div className="artist-list-container">
